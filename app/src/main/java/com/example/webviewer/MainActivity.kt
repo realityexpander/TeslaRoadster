@@ -38,8 +38,9 @@ class MainActivity : Activity() {
         setContentView(webView)
 
         var page = readTextFromAsset("index.html")
-        webView.loadUrl("http://192.168.69.103:8000/")
+//        webView.loadUrl("http://192.168.69.103:8000/")
 //        webView.loadUrl("https://infinite-galactic.myshopify.com/")
+        webView.loadUrl("https://realityexpander.github.io/tesla/index.html")
 //        webView.loadUrl("https://realityexpander.github.io/index.html")
 //        val baseURL = "https://realityexpander.github.io/"
 //        webView.loadDataWithBaseURL(baseURL, page, "text/html", null, baseURL)
