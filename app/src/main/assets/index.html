@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getToastMessage() {
+            return document.getElementById('toastMessage').value;
+        }
+        function concatenateStrings(arg1, arg2) {
+            return arg1 + arg2;
+        }
+        function showToast() {
+            Android.showToast(getToastMessage());
+        }
+    </script>
+
+    <style>
+        /* Navigation tabs */
+        .navigation-tabs {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+        }
+        .tab {
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            font-weight: bold;
+            color: RGB(76, 99, 120);
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        .tab:last-child {
+            margin-bottom: 5px;
+        }
+<!--        .tab:hover {-->
+<!--            opacity: .5;-->
+<!--        }-->
+        .tab-active {
+            background-color:RGB(74,160,234);
+            color: white;
+            border-bottom: 3px solid RGB(74,160,234);
+        }
+        .hidden {
+            display: none;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .white {
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div style="max-width:960px; margin: auto; text-align:center;">
+        <div style="margin-top: 50px;">
+            <button id="changeColor" type="button" onclick="this.style.backgroundColor='red'">Change color</button>
+        </div>
+        <div style="margin-top: 50px;">
+            <input id="toastMessage" type="text" placeholder="Toast message" value="Hello"/>
+        </div>
+        <div style="margin-top: 50px;">
+            <button id="showToast" type="button" onclick="showToast()">Show toast</button>
+        </div>
+        <div style="margin-top: 50px;">
+            <button id="console.log" type="button" onclick="console.log('hello')">console.log</button>
+        </div>
+    </div>
+
+    <div class="navigation-tabs">
+        <p class="tab tab-active" data-content="image-1">Image One</p>
+        <p class="tab" data-content="image-2">Image two</p>
+        <p class="tab" data-content="image-3">Image three</p>
+    </div>
+
+    <div class="navigation-tabs">
+        <div class="content" data-content="image-1">
+            <div class="box red"></div>
+            <img src="assets/elonmusk.jpg" width="100">
+        </div>
+        <div class="content hidden" data-content="image-2">
+            <div class="box green"></div>
+        </div>
+        <div class="content hidden" data-content="image-3">
+            <div class="box white"></div>
+        </div>
+    </div>
+
+    <script>
+        let tabs = document.body.querySelectorAll(".tab")
+        for(tab of tabs) {
+          tab.addEventListener('click', (e) =>{
+            // remove all active tabs
+            for(t of tabs) {
+              t.classList.remove('tab-active')
+            }
+            // activate the clicked tab
+            e.target.classList.add('tab-active')
+
+            let contentToShow = e.target.dataset.content
+            let content = document.body.querySelectorAll(".content")
+            // show the content for the clicked tab
+            for(c of content) {
+              c.classList.add('hidden')
+              if(c.dataset.content == contentToShow) {
+                c.classList.remove('hidden')
+              }
+            }
+          })
+        }
+    </script>
+</body>
+
+</html>
