@@ -11,6 +11,25 @@ Android app to show my clone of the Tesla website.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---- Tech used ----
 - HTML5, CSS, Bootstrap UI components
 - Kotlin
