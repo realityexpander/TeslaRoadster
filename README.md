@@ -5,6 +5,11 @@ Android app to show my clone of the Tesla website.
 - Shows how drawer is implemented
 - Shows embedded animations and youtube videos
 - Reactive
+- Allows interop with Android system
+
+<img src="https://user-images.githubusercontent.com/5157474/147436312-f94ef01d-133a-486b-ba83-139f16693c0f.png" width="200">
+
+
 
 ---- Tech used ----
 - HTML5, CSS, Bootstrap UI components
